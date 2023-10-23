@@ -71,15 +71,15 @@ const SplitBillForm = ({ selectedFriend, onSplitBill }: SplitBillFormProps) => {
           isSubmitting,
         }) => (
           <Form
-            className=' flex flex-col gap-2 bg-rose-100 rounded-md p-6'
+            className=' flex flex-col  gap-6 md:gap-2 bg-rose-100 rounded-md p-6'
             onSubmit={handleSubmit}
           >
-            <Heading className='py-4  uppercase'>
+            <Heading className='py-4 text-sm md:text-2xl  uppercase'>
               {' '}
               SPLIT A BILL WITH {selectedFriend.name}
             </Heading>
             <FormControl isInvalid={!!errors.bill_value && touched.bill_value}>
-              <div className='flex items-start'>
+              <div className='flex flex-col md:flex-row items-start'>
                 <FormLabel
                   className='whitespace-nowrap flex-1'
                   htmlFor='bill_value'
@@ -100,7 +100,7 @@ const SplitBillForm = ({ selectedFriend, onSplitBill }: SplitBillFormProps) => {
               </div>
             </FormControl>
             <FormControl isInvalid={!!errors.your_bill && touched.your_bill}>
-              <div className='flex items-start'>
+              <div className='flex flex-col md:flex-row items-start'>
                 <FormLabel
                   className='flex-1 whitespace-nowrap'
                   htmlFor='your_bill'
@@ -121,7 +121,7 @@ const SplitBillForm = ({ selectedFriend, onSplitBill }: SplitBillFormProps) => {
               </div>
             </FormControl>
             <FormControl>
-              <div className='flex items-start'>
+              <div className='flex flex-col md:flex-row items-start'>
                 <FormLabel
                   className='flex-1 whitespace-nowrap'
                   htmlFor='friends_bill'
@@ -149,7 +149,7 @@ const SplitBillForm = ({ selectedFriend, onSplitBill }: SplitBillFormProps) => {
             <FormControl
               isInvalid={!!errors.who_is_paying && touched.who_is_paying}
             >
-              <div className='flex items-start'>
+              <div className='flex flex-col md:flex-row items-start'>
                 <FormLabel
                   className='flex-1 whitespace-nowrap'
                   htmlFor='who_is_paying'

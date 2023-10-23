@@ -57,11 +57,11 @@ const AddFriendForm = ({ onAddFriend }: { onAddFriend: OnAddFriend }) => {
       >
         {({ handleSubmit, errors, touched, isSubmitting }) => (
           <Form
-            className=' flex flex-col gap-4 bg-rose-100 rounded-md p-4'
+            className=' flex flex-col gap-6 md:gap-4 bg-rose-100 rounded-md p-4'
             onSubmit={handleSubmit}
           >
             <FormControl isInvalid={!!errors.name && touched.name}>
-              <div className='flex items-start'>
+              <div className='flex items-start flex-col md:flex-row'>
                 <FormLabel className='whitespace-nowrap' htmlFor='name'>
                   🧑‍🤝‍🧑{`Friend's name`}
                 </FormLabel>
@@ -79,7 +79,7 @@ const AddFriendForm = ({ onAddFriend }: { onAddFriend: OnAddFriend }) => {
               </div>
             </FormControl>
             <FormControl isInvalid={!!errors.image && touched.image}>
-              <div className='flex items-start'>
+              <div className='flex flex-col md:flex-row items-start'>
                 <FormLabel className='' htmlFor='image'>
                   🖼️{`Image URL`}
                 </FormLabel>
@@ -96,8 +96,8 @@ const AddFriendForm = ({ onAddFriend }: { onAddFriend: OnAddFriend }) => {
                 </div>
               </div>
             </FormControl>
-            <Btn className='ml-auto' type='submit'>
-              Add
+            <Btn className='md:ml-auto' type='submit'>
+              {isSubmitting ? 'Adding...' : 'Add'}
             </Btn>
           </Form>
         )}

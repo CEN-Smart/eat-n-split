@@ -26,7 +26,9 @@ const initialValues: InitialValuesProps = {
 };
 
 const validationSchema = Yup.object({
-  bill_value: Yup.number().required('Bill value is required'),
+  bill_value: Yup.number()
+    .min(200, 'Bill value must be greater than 200')
+    .required('Bill value is required'),
   your_bill: Yup.number().required('Your bill is required'),
   friends_bill: Yup.number(),
   who_is_paying: Yup.string().required('Who is paying is required'),
